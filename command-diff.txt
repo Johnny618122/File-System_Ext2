@@ -1,0 +1,16 @@
+self-tester/autorun.sh 
+diff ./results/case1-cp.img.txt ./solution-results/case1-cp.img.txt (passed)
+diff ./results/case2-cp-large.img.txt ./solution-results/case2-cp-large.img.txt (passed)
+diff ./results/case3-cp-rm-dir.img.txt ./solution-results/case3-cp-rm-dir.img.txt (passed)
+diff ./results/case4-mkdir.img.txt ./solution-results/case4-mkdir.img.txt (passed)
+diff ./results/case5-mkdir-2.img.txt ./solution-results/case5-mkdir-2.img.txt (passes)
+diff ./results/case6-ln-hard.img.txt ./solution-results/case6-ln-hard.img.txt (passed)
+diff results/case7-ln-soft.img.txt solution-results/case7-ln-soft.img.txt (passed)
+diff results/case8-rm.img.txt solution-results/case8-rm.img.txt (passed)
+diff results/case9-rm-2.img.txt solution-results/case9-rm-2.img.txt (passed)
+diff results/case10-rm-3.img.txt solution-results/case10-rm-3.img.txt (passed)
+diff results/case11-rm-large.img.txt solution-results/case11-rm-large.img.txt (passed)
+diff results/case12-rs.img.txt solution-results/case12-rs.img.txt
+diff results/case13-rs-2.img.txt solution-results/case13-rs-2.img.txt
+diff results/case14-rs-large.img.txt solution-results/case14-rs-large.img.txt
+diff results/case15-checker.img.txt solution-results/case15-checker.img.txt (passed)

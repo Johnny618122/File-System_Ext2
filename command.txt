@@ -1,0 +1,39 @@
+gcc -g -o read readimage.c
+./read ./img/twolevel.img
+
+gcc -g -o mkdir ext2_mkdir.c
+gcc -g -o cp ext2_cp.c
+gcc -g -o ln ext2_ln.c
+gcc -g -o rm ext2_rm.c
+gcc -g -o rs ext2_restore.c
+gcc -g -o ch ext2_checker.c
+
+gcc -g -o ext2_mkdir ext2_mkdir.c -lm
+gcc -g -o ext2_cp ext2_cp.c -lm
+gcc -g -o ext2_ln ext2_ln.c -lm
+gcc -g -o ext2_rm ext2_rm.c -lm
+gcc -g -o ext2_restore ext2_restore.c -lm
+gcc -g -o ext2_checker ext2_checker.c -lm
+
+./ext2_mkdir ./img/twolevel.img /level1/level2/temp
+
+./ext2_cp ./img/twolevel.img /Users/fenglunwu/desktop/a4/test.txt /level1/level2/test.txt
+
+./ext2_ln ./img/twolevel.img /level1/level2/bfile /level1/bfile-lnk
+./ext2_ln ./img/twolevel.img -s /level1/level2/bfile /level1/bfile-symlnk
+
+./ext2_rm ./img/twolevel.img /level1/level2/bfile
+./ext2_restore ./img/twolevel.img /level1/level2/bfile
+./ext2_rm ./img/twolevel.img /level1/level2/test.txt
+
+./ext2_rs ./img/twolevel.img /level1/level2/bfile
+./ext2_rs ./img/twolevel.img /level1/level2/test.txt
+
+./ext2_cp ./img/twolevel.img /Users/fenglunwu/desktop/a4/test.txt /level1/test1
+./ext2_cp ./img/twolevel.img /Users/fenglunwu/desktop/a4/test.txt /level1/test2
+./ext2_rm ./img/twolevel.img /level1/test1
+./ext2_restore ./img/twolevel.img /level1/test1
+./ext2_rm ./img/twolevel.img /level1/test2
+./ext2_restore ./img/twolevel.img /level1/test2
+
+./ext2_checker ./img/twolevel-corrupt.img
